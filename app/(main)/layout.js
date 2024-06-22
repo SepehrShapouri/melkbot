@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body className={vazirmatn.className} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
