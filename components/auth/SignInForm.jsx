@@ -8,16 +8,23 @@ import { Button } from "../ui/button";
 import AuthThemeToggle from "./AuthThemeToggle";
 import ResendOTP from "./resendOtp";
 import AuthOTP from "./AuthOTP";
+import { useRouter } from "next/navigation";
 function SignInForm() {
   const [step, setStep] = useState(1);
   const [number, setNumber] = useState();
-  function sendOtp() {
-    console.log(number);
+  const router = useRouter();
+  function sendOTP() {
     setStep(2);
   }
   function editNumber() {
     setStep(1);
   }
+  function checkOTP() {
+    if (true) {
+      router.push("/complete-account");
+    }
+  }
+  function resendOTP() {}
   return (
     <div className="text-center flex flex-col gap-4 max-w-[300px]">
       <div className="flex  justify-center items-center gap-[0.5rem]">
@@ -34,7 +41,7 @@ function SignInForm() {
             value={number}
             onChange={(e) => setNumber(e.target.value)}
           />
-          <Button onClick={sendOtp}>ورود</Button>
+          <Button onClick={sendOTP}>ورود</Button>
         </>
       )}
       {step === 2 && (
@@ -51,8 +58,10 @@ function SignInForm() {
           <div dir="ltr" className="flex items-center justify-center">
             <AuthOTP />
           </div>
-          <ResendOTP />
-          <Button>ورود</Button>
+          <div className="w-full flex items-center justify-center">
+          <ResendOTP resendOTP={resendOTP} />
+          </div>
+          <Button onClick={checkOTP}>تایید</Button>
         </>
       )}
     </div>
