@@ -1,14 +1,8 @@
 "use client";
-import React, { useState } from "react";
-import auth from "@/public/auth.png";
-import otp from "@/public/otp.png";
+import React from "react";
 import Image from "next/image";
-import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import AuthThemeToggle from "./AuthThemeToggle";
-import ResendOTP from "./resendOtp";
-import AuthOTP from "./AuthOTP";
-import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -61,15 +55,15 @@ function CompleteAccountForm() {
             <CustomInput
               control={form.control}
               name="firstname"
-              label="نام"
-              placeholder="نام خود را وارد کنید"
+              label="نام کامل"
+              placeholder="نام کامل خود را وارد کنید"
             />
-            <CustomInput
+            {/* <CustomInput
               control={form.control}
               name="lastname"
               label="نام خانوادگی"
               placeholder="نام خانوادگی خود را وارد کنید"
-            />{" "}
+            />{" "} */}
             <CustomInput
               control={form.control}
               name="city"
