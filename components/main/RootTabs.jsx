@@ -1,10 +1,4 @@
 import React from "react";
-import {
-  CalendarRange,
-  MessageSquarePlus,
-  Home,
-  CircleUserRound,
-} from "lucide-react";
 import RootTab from "./RootTab";
 import { tabs } from "@/lib/constants";
 function RootTabs() {
