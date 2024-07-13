@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import VoiceRecorderDrawer from "@/components/voiceRecorder/VoiceRecorderDrawer";
 import { Mic, Search } from "lucide-react";
 import React from "react";
 const offers = [
@@ -40,7 +41,7 @@ function Home() {
             placeholder="چی میخوای؟"
             className="pl-10 pr-4 placeholder:text-lg placeholder:text-center h-[50px] text-primary text-lg"
           />
-          <Mic className="w-12 h-12" />
+          <VoiceRecorderDrawer/>
         </div>
       </div>
       <section className="flex flex-col gap-[1rem] mt-[1rem] px-[2rem]">
