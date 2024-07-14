@@ -1,9 +1,8 @@
-import { Vazirmatn } from "next/font/google";
 import "@/app/globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import RootTabs from "@/components/main/RootTabs";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
+import { Vazirmatn } from "next/font/google";
 
 const vazirmatn = Vazirmatn({ subsets: ["arabic"] });
 export const metadata = {

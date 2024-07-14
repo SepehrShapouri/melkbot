@@ -6,9 +6,9 @@ import Image from "next/image";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import AuthThemeToggle from "./AuthThemeToggle";
-import ResendOTP from "./resendOtp";
 import AuthOTP from "./AuthOTP";
 import { useRouter } from "next/navigation";
+import ResendOTP from "./ResendOTP";
 function SignInForm() {
   const [step, setStep] = useState(1);
   const [number, setNumber] = useState();

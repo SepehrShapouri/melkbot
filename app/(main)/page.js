@@ -1,4 +1,4 @@
-'use client'
+import NotificationPermission from "@/components/NotificationPermission";
 import AuthThemeToggle from "@/components/auth/AuthThemeToggle";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,9 +10,6 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import VoiceRecorderDrawer from "@/components/voiceRecorder/VoiceRecorderDrawer";
-import useFcmToken from "@/hooks/useFcmToken";
-import { Mic, Search } from "lucide-react";
-import React from "react";
 const offers = [
   {
     title: "زمین ۵۰۰ متری کردان",
@@ -26,25 +23,6 @@ const offers = [
   },
 ];
 function Home() {
-  const { token, notificationPermissionStatus } = useFcmToken();
-
-  const handleTestNotification = async () => {
-    const response = await fetch("/send-notification", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        token: token,
-        title: "Test Notification",
-        message: "This is a test notification",
-        link: "/contact",
-      }),
-    });
-
-    const data = await response.json();
-    console.log(data);
-  };
   return (
     <section className="bg-sky-50 dark:bg-background h-screen">
       <div className="w-full bg-sky-600 h-[250px] p-[2rem] text-white flex rounded-b-xl flex-col justify-center gap-[2rem]">
@@ -54,6 +32,7 @@ function Home() {
             <AuthThemeToggle color="white" />
           </span>
           <h2 className="text-xl">سپهر شاپوری</h2>
+          <NotificationPermission/>
         </div>
         <div className="flex items-center gap-[1rem]">
           <Input
@@ -62,7 +41,7 @@ function Home() {
             placeholder="چی میخوای؟"
             className="pl-10 pr-4 placeholder:text-lg placeholder:text-center h-[50px] text-primary text-lg"
           />
-          <VoiceRecorderDrawer/>
+          <VoiceRecorderDrawer />
         </div>
       </div>
       <section className="flex flex-col gap-[1rem] mt-[1rem] px-[2rem]">
