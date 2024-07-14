@@ -1,3 +1,4 @@
+'use client'
 import AuthThemeToggle from "@/components/auth/AuthThemeToggle";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import VoiceRecorderDrawer from "@/components/voiceRecorder/VoiceRecorderDrawer";
+import useFcmToken from "@/hooks/useFcmToken";
 import { Mic, Search } from "lucide-react";
 import React from "react";
 const offers = [
@@ -24,6 +26,25 @@ const offers = [
   },
 ];
 function Home() {
+  const { token, notificationPermissionStatus } = useFcmToken();
+
+  const handleTestNotification = async () => {
+    const response = await fetch("/send-notification", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        token: token,
+        title: "Test Notification",
+        message: "This is a test notification",
+        link: "/contact",
+      }),
+    });
+
+    const data = await response.json();
+    console.log(data);
+  };
   return (
     <section className="bg-sky-50 dark:bg-background h-screen">
       <div className="w-full bg-sky-600 h-[250px] p-[2rem] text-white flex rounded-b-xl flex-col justify-center gap-[2rem]">

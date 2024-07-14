@@ -1,6 +1,8 @@
 import { Vazirmatn } from "next/font/google";
 import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import RootTabs from "@/components/main/RootTabs";
+import { Toaster } from "@/components/ui/toaster";
 
 const vazirmatn = Vazirmatn({ subsets: ["arabic"] });
 export const metadata = {
@@ -21,6 +23,7 @@ export default function AuthLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
+          <Toaster/>
           {children}
         </ThemeProvider>
       </body>

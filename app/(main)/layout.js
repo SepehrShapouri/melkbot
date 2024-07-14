@@ -3,6 +3,7 @@ import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import RootTabs from "@/components/main/RootTabs";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "@/components/ui/toaster";
 
 const vazirmatn = Vazirmatn({ subsets: ["arabic"] });
 export const metadata = {
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
+          <Toaster/>
           {children}
           <RootTabs />
         </ThemeProvider>
