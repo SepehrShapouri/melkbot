@@ -13,7 +13,7 @@ function RootTab({ tab }) {
           className={clsx(
             "flex cursor-pointer flex-col items-center justify-center rounded-full w-[70px] h-[70px] gap-[0.2rem]",
             pathname == tab.href
-              ? "bg-white text-sky-600"
+              ? "bg-white text-primary"
               : "bg-none text-white"
           )}
         >

@@ -4,7 +4,8 @@ import React from "react";
 
 function NotificationPermission() {
   const { token, notificationPermissionStatus } = useFcmToken();
-  return <div>{token}</div>;
+  console.log(token)
+  return null;
 }
 
 export default NotificationPermission;

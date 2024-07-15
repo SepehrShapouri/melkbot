@@ -11,7 +11,7 @@ const firebaseConfig = {
   storageBucket: "melkbot-pwa.appspot.com",
   messagingSenderId: "844924778037",
   appId: "1:844924778037:web:a694ae054ad99a4c35e37c",
-  measurementId: "G-Y4ZB75M1T1"
+  measurementId: "G-Y4ZB75M1T1",
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -31,7 +31,7 @@ messaging.onBackgroundMessage((payload) => {
   const notificationTitle = payload.notification.title;
   const notificationOptions = {
     body: payload.notification.body,
-    icon: "./logo.png",
+    icon: "/logo.png",
     data: { url: link },
   };
   self.registration.showNotification(notificationTitle, notificationOptions);

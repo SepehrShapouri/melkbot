@@ -25,7 +25,7 @@ const offers = [
 function Home() {
   return (
     <section className="bg-sky-50 dark:bg-background h-screen">
-      <div className="w-full bg-sky-600 h-[250px] p-[2rem] text-white flex rounded-b-xl flex-col justify-center gap-[2rem]">
+      <div className="w-full bg-primary h-[250px] p-[2rem] text-white flex rounded-b-xl flex-col justify-center gap-[2rem]">
         <div>
           <span className="flex items-center justify-between w-full">
             <h1 className="text-2xl font-semibold">خوش اومدی</h1>

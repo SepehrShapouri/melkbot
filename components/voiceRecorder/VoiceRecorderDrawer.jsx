@@ -17,10 +17,9 @@ function VoiceRecorderDrawer() {
   return (
     <Drawer>
       <DrawerTrigger>
-        {" "}
         <Mic className="w-12 h-12" />
       </DrawerTrigger>
-      <DrawerContent className="h-[300px]">
+      <DrawerContent className="h-[250px]">
         <DrawerHeader>
           <DrawerTitle>چی میخوای؟ به ملک بات بگو!</DrawerTitle>
           <DrawerDescription>
@@ -30,10 +29,6 @@ function VoiceRecorderDrawer() {
         </DrawerHeader>
         <AudioRecorderWithVisualizer/>
         <DrawerFooter>
-          {/* <Button>Submit</Button>
-          <DrawerClose>
-            <Button variant="outline">Cancel</Button>
-          </DrawerClose> */}
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

@@ -122,7 +122,7 @@ const useFcmToken = () => {
           {
             body: payload.notification?.body || "This is a new message",
             data: link ? { url: link } : undefined,
-            icon:'/icon.png'
+            icon:'/icon.png',
           }
         );
 

@@ -4,7 +4,8 @@ import React, { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 
 function AuthThemeToggle({ color = null }) {
-  const { setTheme, theme } = useTheme();
+  const { setTheme, theme, systemTheme } = useTheme();
+  console.log(systemTheme);
   function renderIcon(theme) {
     switch (theme) {
       case "light": {
@@ -24,7 +25,17 @@ function AuthThemeToggle({ color = null }) {
         );
       }
       default: {
-        null;
+        return systemTheme == "light" ? (
+          <Moon
+            className={color ? `text-${color}` : "text-primary"}
+            onClick={() => setTheme("dark")}
+          />
+        ) : (
+          <Sun
+            className={color ? `text-${color}` : "text-primary"}
+            onClick={() => setTheme("light")}
+          />
+        );
       }
     }
   }
