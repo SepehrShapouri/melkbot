@@ -1,6 +1,6 @@
 "use client";
 import useFcmToken from "@/hooks/useFcmToken";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -14,28 +14,49 @@ import {
 } from "@/components/ui/alert-dialog";
 
 function NotificationPermission() {
-  const { token, notificationPermissionStatus ,loadToken} = useFcmToken();
-  async function getNotifPermission(){
+  const [open, setOpen] = useState(false);
+  const { token, notificationPermissionStatus, loadToken } = useFcmToken();
+  const isInstalled = window.matchMedia("(display-mode: standalone)").matches;
+  async function getNotifPermission() {
     if ("Notification" in window) {
       loadToken();
     }
+    setOpen(false);
   }
+  useEffect(() => {
+    if (!isInstalled) return;
+    if (Notification.permission === "default") {
+      setOpen(true);
+      return;
+    }
+    if (Notification.permission === "granted") {
+      setOpen(false);
+      return;
+    }
+    if (Notification.permission === "denied") {
+      setOpen(false);
+      return;
+    }
+  }, []);
   return (
-    <AlertDialog className="max-w-[200px]">
-      <AlertDialogTrigger>Open</AlertDialogTrigger>
+    <><p className="max-w-[300px]  overflow-scroll">{token}</p>
+        <AlertDialog open={open}>
       <AlertDialogContent className="max-w-[300px]">
         <AlertDialogHeader>
           <AlertDialogTitle>اعلانات</AlertDialogTitle>
           <AlertDialogDescription>
-            برای تجربه کاربری بهتر و استفاده از تمامی امکانات ملک بات, ما به شما پیشنهاد میکنیم دسترسی اعلانات را فعال کنید.
+            برای تجربه کاربری بهتر و استفاده از تمامی امکانات ملک بات, ما به شما
+            پیشنهاد میکنیم دسترسی اعلانات را فعال کنید.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>بعدا</AlertDialogCancel>
-          <AlertDialogAction onClick={getNotifPermission}>فعال سازی</AlertDialogAction>
+          <AlertDialogAction onClick={getNotifPermission}>
+            فعال سازی
+          </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
-    </AlertDialog>
+    </AlertDialog></>
   );
 }
 
