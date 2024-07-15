@@ -40,6 +40,8 @@ const useFcmToken = () => {
   const retryLoadToken = useRef(0); // Ref to keep track of retry attempts.
   const isLoading = useRef(false); // Ref to keep track if a token fetch is currently in progress.
   const { toast } = useToast();
+
+
   const loadToken = async () => {
     // Step 4: Prevent multiple fetches if already fetched or in progress.
     if (isLoading.current) return;
@@ -84,12 +86,12 @@ const useFcmToken = () => {
     isLoading.current = false;
   };
 
-  useEffect(() => {
-    // Step 8: Initialize token loading when the component mounts.
-    if ("Notification" in window) {
-      loadToken();
-    }
-  }, []);
+  // useEffect(() => {
+  //   // Step 8: Initialize token loading when the component mounts.
+  //   if ("Notification" in window) {
+  //     loadToken();
+  //   }
+  // }, []);
 
   useEffect(() => {
     const setupListener = async () => {
@@ -154,7 +156,7 @@ const useFcmToken = () => {
     return () => unsubscribe?.();
   }, [token, router, toast]);
 
-  return { token, notificationPermissionStatus }; // Return the token and permission status.
+  return { token, notificationPermissionStatus,loadToken }; // Return the token and permission status.
 };
 
 export default useFcmToken;
