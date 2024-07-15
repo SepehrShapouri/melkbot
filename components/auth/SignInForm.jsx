@@ -29,7 +29,7 @@ function SignInForm() {
   return (
     <div className="text-center flex flex-col gap-4 max-w-[300px]">
       <div className="flex  justify-center items-center gap-[0.5rem]">
-        <Link className="text-4xl font-extrabold text-primary">ملک بات</Link>
+        <Link href="/" className="text-4xl font-extrabold text-primary">ملک بات</Link>
         <AuthThemeToggle />
       </div>
       {step === 1 && (
