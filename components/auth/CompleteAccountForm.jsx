@@ -8,7 +8,8 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form } from "../ui/form";
 import CustomInput from "../CustomInput";
-import complete from "@/public/complete.png"
+import complete from "@/public/complete-account.png"
+import Link from "next/link";
 function CompleteAccountForm() {
   const formSchema = z.object({
     firstname: z
@@ -38,7 +39,7 @@ function CompleteAccountForm() {
   return (
     <div className="text-center flex flex-col gap-4 max-w-[300px]">
       <div className="flex  justify-center items-center gap-[0.5rem]">
-        <h1 className="text-4xl font-extrabold text-sky-600">ملک بات</h1>
+        <Link href="/" className="text-4xl font-extrabold text-primary">ملک بات</Link>
         <AuthThemeToggle />
       </div>
       <p className="text-lg">
@@ -46,7 +47,7 @@ function CompleteAccountForm() {
         کن!
       </p>
       <div className="max-w-[200px] flex items-center justify-center m-auto">
-      <Image src={complete} alt="complete profile image" width={2000} height={2000}/>
+      <Image src={complete} alt="complete profile image" width={2000} height={2000} priority quality={75}/>
       </div>
       <h2 className="font-bold text-xl">ورود |‌ ثبت نام</h2>
       <Form {...form}>

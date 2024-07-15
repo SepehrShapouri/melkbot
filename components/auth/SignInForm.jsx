@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import auth from "@/public/auth.png";
-import otp from "@/public/otp.png";
+import auth from "@/public/signin.png";
+import otp from "@/public/checkotp.png";
 import Image from "next/image";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
@@ -9,6 +9,7 @@ import AuthThemeToggle from "./AuthThemeToggle";
 import AuthOTP from "./AuthOTP";
 import { useRouter } from "next/navigation";
 import ResendOTP from "./ResendOTP";
+import Link from "next/link";
 function SignInForm() {
   const [step, setStep] = useState(1);
   const [number, setNumber] = useState();
@@ -28,7 +29,7 @@ function SignInForm() {
   return (
     <div className="text-center flex flex-col gap-4 max-w-[300px]">
       <div className="flex  justify-center items-center gap-[0.5rem]">
-        <h1 className="text-4xl font-extrabold text-sky-600">ملک بات</h1>
+        <Link className="text-4xl font-extrabold text-primary">ملک بات</Link>
         <AuthThemeToggle />
       </div>
       {step === 1 && (
@@ -59,7 +60,7 @@ function SignInForm() {
             <AuthOTP />
           </div>
           <div className="w-full flex items-center justify-center">
-          <ResendOTP resendOTP={resendOTP} />
+            <ResendOTP resendOTP={resendOTP} />
           </div>
           <Button onClick={checkOTP}>تایید</Button>
         </>
