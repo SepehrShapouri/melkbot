@@ -16,7 +16,7 @@ import {
 function NotificationPermission() {
   const [open, setOpen] = useState(false);
   const { token, notificationPermissionStatus, loadToken } = useFcmToken();
-  const isInstalled = window.matchMedia("(display-mode: standalone)").matches;
+  
   async function getNotifPermission() {
     if ("Notification" in window) {
       loadToken();
@@ -24,7 +24,7 @@ function NotificationPermission() {
     setOpen(false);
   }
   useEffect(() => {
-    if (!isInstalled) return;
+    if (!window.matchMedia("(display-mode: standalone)").matches) return;
     if (Notification.permission === "default") {
       setOpen(true);
       return;
