@@ -128,7 +128,7 @@ export const AudioRecorderWithVisualizer = ({ className, timerClassName }) => {
   function stopRecording() {
     recorder.onstop = () => {
       const recordBlob = new Blob(recordingChunks, {
-        type: "audio/wav",
+        type: "video/mp4",
       });
       // downloadBlob(recordBlob);
       setCurrentRecord({
