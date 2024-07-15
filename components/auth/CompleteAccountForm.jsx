@@ -8,7 +8,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form } from "../ui/form";
 import CustomInput from "../CustomInput";
-import complete from "@/public/complete-account.png"
+import complete from "@/public/complete-profile.png"
 import Link from "next/link";
 function CompleteAccountForm() {
   const formSchema = z.object({
