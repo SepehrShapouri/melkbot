@@ -9,26 +9,101 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import VoiceRecorderDrawer from "@/components/voiceRecorder/VoiceRecorderDrawer";
 import useFcmToken from "@/hooks/useFcmToken";
-import { Settings, User } from "lucide-react";
+import { Building, Landmark, Settings, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 const offers = [
   {
     title: "زمین ۵۰۰ متری کردان",
     id: 1,
-    desc: "محدوده کردان حداکثر ۲ میلیارد",
+    desc: "محدوده کردان",
+    budget: "2_000_000",
+    property_type: "land",
   },
   {
     title: "زمین ۸۰۰ متری کردان",
     id: 2,
-    desc: "محدوده کردان حداکثر ۲ میلیارد",
+    desc: "محدوده کردان",
+    budget: "2_000_000",
+    property_type: "land",
+  },
+  {
+    title: "۱۲۰ متری",
+    id: 2,
+    desc: "گوهردشت",
+    budget: "2_000_000",
+    property_type: "flat",
+  },
+  {
+    title: "۱۲۰ متری",
+    id: 2,
+    desc: "گوهردشت",
+    budget: "2_000_000",
+    property_type: "flat",
+  },
+  {
+    title: "۱۲۰ متری",
+    id: 2,
+    desc: "گوهردشت",
+    budget: "2_000_000",
+    property_type: "flat",
+  },
+  {
+    title: "۱۲۰ متری",
+    id: 2,
+    desc: "گوهردشت",
+    budget: "2_000_000",
+    property_type: "flat",
+  },
+  {
+    title: "۱۲۰ متری",
+    id: 2,
+    desc: "گوهردشت",
+    budget: "2_000_000",
+    property_type: "flat",
+  },
+  {
+    title: "۱۲۰ متری",
+    id: 2,
+    desc: "گوهردشت",
+    budget: "2_000_000",
+    property_type: "flat",
+  },
+  {
+    title: "۱۲۰ متری",
+    id: 2,
+    desc: "گوهردشت",
+    budget: "2_000_000",
+    property_type: "flat",
+  },
+  {
+    title: "۱۲۰ متری",
+    id: 2,
+    desc: "گوهردشت",
+    budget: "2_000_000",
+    property_type: "flat",
+  },
+  {
+    title: "۱۲۰ متری",
+    id: 2,
+    desc: "گوهردشت",
+    budget: "2_000_000",
+    property_type: "flat",
+  },
+  {
+    title: "۱۲۰ متری",
+    id: 2,
+    desc: "گوهردشت",
+    budget: "2_000_000",
+    property_type: "flat",
   },
 ];
 function Home() {
   return (
-    <section className="bg-white dark:bg-gray-950 h-screen">
+    <section className="bg-white dark:bg-gray-950 ">
       <div className="full-height lg:max-w-[500px] relative mx-auto flex flex-col">
         <div
           className="h-[190px] bg-blue-700 dark:bg-[#1E3A8A] absolute top-0 w-full"
@@ -38,7 +113,7 @@ function Home() {
           <div className="flex item-center gap-4 justify-between">
             <Link className="flex items-center gap-3" href="/settings">
               <div className="aspect-square w-[38px] h-[38px] rounded-lg flex items-center justify-center cursor-pointer bg-blue-800 dark:bg-[#172554]">
-                <User />
+                <User className="text-white" />
               </div>
               <div class="text-white">
                 <p class="text-[12px] mb-1">سپهر شاپوری</p>
@@ -47,12 +122,11 @@ function Home() {
             </Link>
             <Link href="/settings">
               <div className="aspect-square w-[38px] h-[38px] rounded-lg flex items-center justify-center cursor-pointer bg-blue-800 dark:bg-[#172554]">
-                <Settings />
+                <Settings className="text-white" />
               </div>
             </Link>
           </div>
         </div>
-
 
         <div className="flex-1 w-full bg-white dark:bg-gray-950 overflow-auto flex flex-col justify-between">
           <div className="px-6">
@@ -61,8 +135,37 @@ function Home() {
                 <p class="text-white text-xl">چی میخوای؟</p>
               </div>
               <div class="select-none">
-                <Button className="bg-[#1E3A8A] w-full h-[48px]"></Button>
+                <Button className="dark:bg-[#1E3A8A] bg-blue-700 w-full h-[48px]"></Button>
               </div>
+            </div>
+          </div>
+          <div className="flex-1 flex flex-col px-6 pb-10 overflow-auto no-scrollbar">
+            <div class="flex justify-between items-center gap-4 mb-6">
+              <p class="font-bold text-gray-800">درخواست های اخیر</p>
+              <a class="text-sm text-gray-500" href="/expenses">
+                مشاهده همه
+              </a>
+            </div>
+            <div className="flex flex-col gap-[0.5rem] ">
+              {offers.map((offer) => {
+                return (
+                  <div className="w-full bg-white drop-shadow-xl shadow-md py-[1rem] px-[1rem] rounded-md">
+                    <div className="flex items-center gap-[0.5rem]">
+                      <div className="aspect-square w-[45px] h-[45px] rounded-lg flex items-center justify-center cursor-pointer bg-blue-200 ">
+                        {offer.property_type == "land" ? (
+                          <Landmark className="text-blue-600" />
+                        ) : (
+                          <Building className="text-blue-600" />
+                        )}
+                      </div>
+                      <span>
+                        <h2>{offer.title}</h2>
+                        <p>{offer.desc}</p>
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
