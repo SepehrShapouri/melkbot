@@ -141,8 +141,8 @@ function Home() {
           </div>
           <div className="flex-1 flex flex-col px-6 pb-10 overflow-auto no-scrollbar">
             <div class="flex justify-between items-center gap-4 mb-6">
-              <p class="font-bold text-gray-800">درخواست های اخیر</p>
-              <a class="text-sm text-gray-500" href="/expenses">
+              <p class="font-bold text-gray-800 dark:text-white">درخواست های اخیر</p>
+              <a class="text-sm text-gray-500 dark:text-gray-200" href="/expenses">
                 مشاهده همه
               </a>
             </div>
