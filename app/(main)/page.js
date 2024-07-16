@@ -11,6 +11,9 @@ import {
 import { Input } from "@/components/ui/input";
 import VoiceRecorderDrawer from "@/components/voiceRecorder/VoiceRecorderDrawer";
 import useFcmToken from "@/hooks/useFcmToken";
+import { Settings, User } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 const offers = [
   {
     title: "زمین ۵۰۰ متری کردان",
@@ -25,15 +28,53 @@ const offers = [
 ];
 function Home() {
   return (
-    <section className="bg-sky-50 dark:bg-background h-screen">
-      <div className="w-full bg-primary h-[250px] p-[2rem] text-white flex rounded-b-xl flex-col justify-center gap-[2rem]">
+    <section className="bg-white dark:bg-gray-950 h-screen">
+      <div className="full-height lg:max-w-[500px] relative mx-auto flex flex-col">
+        <div
+          className="h-[190px] bg-blue-700 dark:bg-[#1E3A8A] absolute top-0 w-full"
+          id="header-background"
+        ></div>
+        <div className="w-full z-10 p-6">
+          <div className="flex item-center gap-4 justify-between">
+            <Link className="flex items-center gap-3" href="/settings">
+              <div className="aspect-square w-[38px] h-[38px] rounded-lg flex items-center justify-center cursor-pointer bg-blue-800 dark:bg-[#172554]">
+                <User />
+              </div>
+              <div class="text-white">
+                <p class="text-[12px] mb-1">سپهر شاپوری</p>
+                <p class="text-[10px]">09907270226</p>
+              </div>
+            </Link>
+            <Link href="/settings">
+              <div className="aspect-square w-[38px] h-[38px] rounded-lg flex items-center justify-center cursor-pointer bg-blue-800 dark:bg-[#172554]">
+                <Settings />
+              </div>
+            </Link>
+          </div>
+        </div>
+
+
+        <div className="flex-1 w-full bg-white dark:bg-gray-950 overflow-auto flex flex-col justify-between">
+          <div className="px-6">
+            <div class="h-[220px] p-4 bg-blue-800 dark:bg-[#172554] rounded-xl relative drop-shadow-xl mb-6 flex flex-col justify-between">
+              <div class="flex gap-4 justify-between relative">
+                <p class="text-white text-xl">چی میخوای؟</p>
+              </div>
+              <div class="select-none">
+                <Button className="bg-[#1E3A8A] w-full h-[48px]"></Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <div className="w-full bg-primary h-[250px] p-[2rem] text-white flex rounded-b-xl flex-col justify-center gap-[2rem]">
         <div>
           <span className="flex items-center justify-between w-full">
             <h1 className="text-2xl font-semibold">خوش اومدی</h1>
             <AuthThemeToggle color="white" />
           </span>
           <h2 className="text-xl">سپهر شاپوری</h2>
-          <NotificationPermission/>
+          <NotificationPermission />
         </div>
         <div className="flex items-center gap-[1rem]">
           <Input
@@ -64,7 +105,7 @@ function Home() {
             );
           })}
         </div>
-      </section>
+      </section> */}
     </section>
   );
 }

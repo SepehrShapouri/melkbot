@@ -60,3 +60,8 @@
   }
   
 }
+#header-background{
+  background-image: url("/background-1.png");
+  background-position:left top;
+  background-repeat: no-repeat;
+}

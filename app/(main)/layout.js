@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import RootHeader from "@/components/main/RootHeader";
 import RootTabs from "@/components/main/RootTabs";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
@@ -80,6 +81,7 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           <Toaster />
+          <RootHeader/>
           {children}
           <RootTabs />
         </ThemeProvider>

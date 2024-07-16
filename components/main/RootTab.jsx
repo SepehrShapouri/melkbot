@@ -11,14 +11,12 @@ function RootTab({ tab }) {
       <Link href={tab.href}>
         <div
           className={clsx(
-            "flex cursor-pointer flex-col items-center justify-center rounded-full w-[70px] h-[70px] gap-[0.2rem]",
-            pathname == tab.href
-              ? "bg-white text-primary"
-              : "bg-none text-white"
+            "flex cursor-pointer flex-col items-center justify-center gap-[0.2rem]",
+            pathname == tab.href ? "text-primary" : " text-gray-800 dark:text-white"
           )}
         >
           {tab.logo}
-          {tab.title}
+          <p className="text-xs"> {tab.title}</p>
         </div>
       </Link>
     </li>
