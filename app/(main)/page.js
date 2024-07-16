@@ -154,6 +154,7 @@ function Home() {
               </a>
             </div>
             <ScrollArea className="
+            mb-[2rem]
         h-[370px] ">
             <div className="flex flex-col gap-[0.5rem] ">
               {offers.map((offer,index) => {
