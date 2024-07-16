@@ -5,7 +5,7 @@ function RootTabs() {
   return (
     <nav className="w-full h-[80px] bg-background dark:bg-gray-900 fixed bottom-0 flex items-center rounded-t-xl drop-shadow-2xl">
       <ul className="flex justify-between w-full px-[2rem]">
-        {TABS.map((tab,index) => (
+        {TABS.map((tab, index) => (
           <RootTab key={index} tab={tab} />
         ))}
       </ul>

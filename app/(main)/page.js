@@ -149,7 +149,7 @@ function Home() {
             <div className="flex flex-col gap-[0.5rem] ">
               {offers.map((offer,index) => {
                 return (
-                  <div className="w-full bg-white drop-shadow-xl shadow-md py-[1rem] px-[1rem] rounded-md" key={index}>
+                  <div className="w-full bg-white dark:bg-gray-950 drop-shadow-xl shadow-md py-[1rem] px-[1rem] rounded-md" key={index}>
                     <div className="flex items-center gap-[0.5rem]">
                       <div className="aspect-square w-[45px] h-[45px] rounded-lg flex items-center justify-center cursor-pointer bg-blue-200 ">
                         {offer.property_type == "land" ? (
