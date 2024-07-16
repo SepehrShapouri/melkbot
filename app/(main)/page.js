@@ -12,7 +12,7 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import VoiceRecorderDrawer from "@/components/voiceRecorder/VoiceRecorderDrawer";
 import useFcmToken from "@/hooks/useFcmToken";
-import { Building, Landmark, Settings, User } from "lucide-react";
+import { Building, Landmark, Scroll, Settings, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 const offers = [
@@ -100,6 +100,13 @@ const offers = [
     budget: "2_000_000",
     property_type: "flat",
   },
+  {
+    title: "۱۲۰ متر2ی",
+    id: 2,
+    desc: "گوهردشت",
+    budget: "2_000_000",
+    property_type: "flat",
+  },
 ];
 function Home() {
   return (
@@ -146,10 +153,12 @@ function Home() {
                 مشاهده همه
               </a>
             </div>
+            <ScrollArea className="
+        h-[370px] ">
             <div className="flex flex-col gap-[0.5rem] ">
               {offers.map((offer,index) => {
                 return (
-                  <div className="w-full bg-white dark:bg-gray-950 drop-shadow-xl shadow-md py-[1rem] px-[1rem] rounded-md" key={index}>
+                  <div className="w-full bg-white dark:bg-slate-900  shadow-md py-[1rem] px-[1rem] rounded-md" key={index}>
                     <div className="flex items-center gap-[0.5rem]">
                       <div className="aspect-square w-[45px] h-[45px] rounded-lg flex items-center justify-center cursor-pointer bg-blue-200 ">
                         {offer.property_type == "land" ? (
@@ -167,6 +176,7 @@ function Home() {
                 );
               })}
             </div>
+            </ScrollArea>
           </div>
         </div>
       </div>
