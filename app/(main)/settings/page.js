@@ -13,7 +13,7 @@ import React from "react";
 
 function page() {
   return (
-    <section className="flex-1 w-full bg-white overflow-auto flex flex-col justify-between dark:bg-gray-950 ">
+    <section className="flex-1 w-full bg-white overflow-auto flex flex-col justify-between dark:bg-gray-950 min-h-[85svh]">
       <div className="flex-1 pb-14 overflow-auto no-scrollbar p-6">
         <div class="flex flex-col gap-4 items-center mb-6">
           <div class="w-[100px] h-[100px] rounded-full flex items-center justify-center bg-stone-100 dark:bg-gray-800">
