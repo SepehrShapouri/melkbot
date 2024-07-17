@@ -65,3 +65,8 @@
   background-position:left top;
   background-repeat: no-repeat;
 }
+#no-scrollbar{
+  scrollbar-width: 0;
+  -ms-overflow-style: none;
+
+}
