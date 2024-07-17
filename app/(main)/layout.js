@@ -74,6 +74,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={vazirmatn.className} suppressHydrationWarning>
+        <main className="lg:max-w-[500px] m-auto">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -85,6 +86,7 @@ export default function RootLayout({ children }) {
           {children}
           <RootTabs />
         </ThemeProvider>
+        </main>
       </body>
     </html>
   );
